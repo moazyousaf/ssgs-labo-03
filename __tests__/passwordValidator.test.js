@@ -4,6 +4,21 @@ const {
   generateSecurePassword,
 } = require('../src/passwordValidator');
 
+const TEST_PASSWORDS = {
+  // Punteggio 0
+  zero: 'a',
+  // Punteggio 25
+  low: 'abcdefgh',
+  // Punteggio 50
+  medium: 'Abcdefgh',
+  // Punteggio 75
+  high: 'Abcdefgh1',
+  // Punteggio 100
+  max: 'Abcd123!',
+  // Input non stringa
+  invalid: 12345,
+};
+
 //FUNZIONE 1
 describe('Check Password Rule', () => {
   test('Deve restituire TRUE per password con lunghezza >= 8', () => {
