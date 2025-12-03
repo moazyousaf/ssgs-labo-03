@@ -3,6 +3,17 @@
   "version": "1.0.0",
   "description": "Un tool CLI per analizzare la robustezza di una password.",
   "main": "index.js",
+  "bin": {
+    "pwd-tool": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^30.2.0"
+  }
 }
