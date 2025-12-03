@@ -31,3 +31,5 @@ jobs:
       # Upload del Report di Coverage come Artefatto
       - name: Upload Coverage Artifact
         uses: actions/upload-artifact@v4
+        with:
+          path: coverage/
