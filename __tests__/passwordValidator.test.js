@@ -30,7 +30,7 @@ describe('Check Password Rule', () => {
   });
 
   test('Deve lanciare un errore se la regola non è definita', () => {
-    expect(checkPasswordRule('regolaInesistente', 'password')).toThrow(
+    expect(() => checkPasswordRule('regolaInesistente', 'password')).toThrow(
       'Regola non valida: regolaInesistente'
     );
   });
@@ -39,7 +39,9 @@ describe('Check Password Rule', () => {
 //FUNZIONE 2
 describe('Password Validator', () => {
   test("Deve lanciare un errore se l'input non è una stringa", () => {
-    expect(analyzePassword(123)).toThrow('Input must be a string.');
+    expect(() => analyzePassword(TEST_PASSWORDS.invalid)).toThrow(
+      'Input must be a string.'
+    );
   });
 
   test('Deve restituire un oggetto con score, verdict e rules', () => {
